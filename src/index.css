@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* abril fat face  */
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Fira font  */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+.Text-1{
+  @apply font-fira font-medium text-2xl ;
+}
+.Text-2{
+  @apply font-fira font-normal text-xl ;
+}
+
+.Btn {
+  @apply bg-slate-300 py-2 px-4 mt-2 rounded-2xl w-max font-abril font-medium text-xs;
+}
+
+.header {
+  @apply font-fira text-xl font-medium md:text-5xl;
+}
+.header-2 {
+  @apply font-fira text-2xl font-bold md:text-5xl;
+}
+
+.header-outline{
+  @apply  font-fira text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-green-500 md:text-6xl ;
+}
+
+.icon{
+  @apply text-4xl p-4 hover:text-blue-500 transition-all duration-300 ease-in-out hover:scale-110; 
+}
+
+/* Navbar */
+.nav-item {
+  position: relative;
+  font-size: 1.25rem;
+  color: black;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-item:hover {
+  color: #22177A; /* Warna hover */
+  transform: scale(1.1); /* Membesar sedikit saat dihover */
+}
+
+.nav-item::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: -5px;
+  left: 0;
+  background-color: #22177A;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-item:hover::before {
+  transform: scaleX(1); /* Menampilkan garis bawah saat hover */
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+  .nav-item {
+    font-size: 1.5rem;
+    padding: 10px 0;
+    text-align: center;
+  }
+}
+
+/* Icon  */
+.solar--hamburger-menu-broken {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-width='1.5' d='M4 7h3m13 0h-9m9 10h-3M4 17h9m-9-5h16'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
