@@ -1,13 +1,30 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* abril fat face  */
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 /* Fira font  */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+.gradient {
+  background-image: linear-gradient(
+    45deg,
+    hsl(240deg 76% 61%) 0%,
+    hsl(249deg 74% 62%) 6%,
+    hsl(255deg 71% 64%) 19%,
+    hsl(260deg 68% 66%) 35%,
+    hsl(265deg 65% 68%) 50%,
+    hsl(223deg 100% 73%) 63%,
+    hsl(200deg 100% 58%) 74%,
+    hsl(191deg 100% 50%) 83%,
+    hsl(187deg 100% 54%) 89%,
+    hsl(183deg 100% 48%) 94%,
+    hsl(177deg 100% 47%) 98%,
+    hsl(170deg 100% 48%) 99%,
+    hsl(163deg 100% 48%) 100%
+  );
+}
 
 .Text-1{
   @apply font-fira font-medium text-2xl ;
@@ -21,10 +38,10 @@
 }
 
 .header {
-  @apply font-fira text-xl font-medium md:text-5xl;
+  @apply font-abril text-xl font-medium md:text-5xl;
 }
 .header-2 {
-  @apply font-fira text-2xl font-bold md:text-5xl;
+  @apply font-fira text-2xl font-bold md:text-3xl;
 }
 
 .header-outline{

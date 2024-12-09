@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll"; // import react-scroll
-import SertifT from "./assets/Thumbnail-sertifgene 1.png"
-import PokedexT from "./assets/Thumbnail-pokedex.png"
-import WhitepaceT from "./assets/Thumbnail-Whitepace.png"
+import SertifT from "./assets/Thumbnail-sertifgene 1.png";
+import PokedexT from "./assets/Thumbnail-pokedex.png";
+import WhitepaceT from "./assets/Thumbnail-Whitepace.png";
 import { SiReact } from "react-icons/si";
 import {
   RiTailwindCssFill,
@@ -15,6 +15,9 @@ import { FaHtml5 } from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import { SiTypescript } from "react-icons/si";
+import Garis from "./assets/Line 1.png";
+import Kotak from "./assets/Group 1.png";
+import Lingkaran from "./assets/Group 2.png";
 
 const Navbar = () => {
   const [active, setActive] = useState(false);
@@ -120,41 +123,41 @@ const Navbar = () => {
 };
 
 const App = () => {
-const [isProgresVisible, setIsProgresVisible] = useState(false);
-const [isContactVisible, setIsContactVisible] = useState(false);
- const [hasProgresAnimated, setHasProgresAnimated] = useState(false);
- const [hasContactAnimated, setHasContactAnimated] = useState(false);
-const contactRef = useRef(null);
-const progresRef = useRef(null);
+  const [isProgresVisible, setIsProgresVisible] = useState(false);
+  const [isContactVisible, setIsContactVisible] = useState(false);
+  const [hasProgresAnimated, setHasProgresAnimated] = useState(false);
+  const [hasContactAnimated, setHasContactAnimated] = useState(false);
+  const contactRef = useRef(null);
+  const progresRef = useRef(null);
 
-useEffect(() => {
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.target.id === "Progres") {
-         if (entry.isIntersecting && !hasProgresAnimated) {
-           setIsProgresVisible(true);
-           setHasProgresAnimated(true); // Pastikan animasi hanya sekali
-         }
-      } else if (entry.target.id === "Contact") {
-         if (entry.isIntersecting && !hasContactAnimated) {
-           setIsContactVisible(true);
-           setHasContactAnimated(true); // Pastikan animasi hanya sekali
-         }
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.target.id === "Progres") {
+          if (entry.isIntersecting && !hasProgresAnimated) {
+            setIsProgresVisible(true);
+            setHasProgresAnimated(true); // Pastikan animasi hanya sekali
+          }
+        } else if (entry.target.id === "Contact") {
+          if (entry.isIntersecting && !hasContactAnimated) {
+            setIsContactVisible(true);
+            setHasContactAnimated(true); // Pastikan animasi hanya sekali
+          }
+        }
+      },
+      {
+        threshold: 0.3,
       }
-    },
-    {
-      threshold: 0.5,
-    }
-  );
+    );
 
-  if (progresRef.current) observer.observe(progresRef.current);
-  if (contactRef.current) observer.observe(contactRef.current);
+    if (progresRef.current) observer.observe(progresRef.current);
+    if (contactRef.current) observer.observe(contactRef.current);
 
-  return () => {
-    if (progresRef.current) observer.unobserve(progresRef.current);
-    if (contactRef.current) observer.unobserve(contactRef.current);
-  };
-}, []);
+    return () => {
+      if (progresRef.current) observer.unobserve(progresRef.current);
+      if (contactRef.current) observer.unobserve(contactRef.current);
+    };
+  }, []);
 
   return (
     <div>
@@ -165,7 +168,7 @@ useEffect(() => {
       {/* Hero Section */}
       <section
         id="Hero"
-        className="h-screen flex justify-center items-center flex-col"
+        className="h-screen flex justify-center items-center flex-col  overflow-hidden "
       >
         <div className="">
           <motion.p
@@ -190,7 +193,7 @@ useEffect(() => {
               ease: "easeOut",
             }}
           >
-            i am Rendy,
+            i am Rendy 👨‍🎓,
           </motion.p>
           <motion.p
             className="header"
@@ -206,9 +209,9 @@ useEffect(() => {
           </motion.p>
 
           <motion.div
-            className="Btn"
+            className="Btn "
             initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 10 }}
             transition={{
               delay: 2,
               duration: 2,
@@ -216,9 +219,9 @@ useEffect(() => {
             }}
           >
             <motion.button
-              className="py-2 px-6 bg-blue-500 text-white rounded-lg font-semibold text-xs lg:text-lg transition-all duration-100 ease-in-out transform hover:scale-110 hover:bg-blue-600 "
-              whileHover={{ scale: 1.15, backgroundColor: "#3b82f6" }} // Hover effect
-              whileTap={{ scale: 0.75 }} // Klik effect
+              className="py-2 px-6 bg-blue-500 text-white rounded-lg font-fira font-semibold text-xs lg:text-lg transition-all duration-100 ease-in-out transform hover:scale-110 hover:bg-blue-600 "
+              whileHover={{ scale: 1.15, backgroundColor: "#3b82f6" }}
+              whileTap={{ scale: 0.75 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               <Link
@@ -232,13 +235,49 @@ useEffect(() => {
             </motion.button>
           </motion.div>
         </div>
+        <motion.img
+          src={Garis}
+          alt="Garis turun"
+          className="absolute bottom-24 h-16"
+          initial={{ opacity: 0, y: 0 }}
+          animate={{ opacity: 1, y: 40 }}
+          transition={{
+            delay: 2,
+            duration: 1,
+            ease: "easeOut",
+          }}
+        />
+        <motion.img
+          src={Kotak}
+          alt="Kotak"
+          className="absolute top-0 left-0 hidden md:block"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{
+            delay: 2,
+            duration: 1,
+            ease: "easeOut",
+          }}
+        />
+        <motion.img
+          src={Lingkaran}
+          alt="lingkaran"
+          className="absolute bottom-0 right-0 hidden md:block"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{
+            delay: 2,
+            duration: 1,
+            ease: "easeOut",
+          }}
+        />
       </section>
 
       {/* Progres Section */}
       <section
         id="Progres"
         ref={progresRef}
-        className="backdrop:h-min bg-slate-600"
+        className="backdrop:h-min gradient"
       >
         <div className="text-center pt-10 pb-5">
           <p className="header-2 text-white ">Project at internship</p>
@@ -275,14 +314,14 @@ useEffect(() => {
               whileHover={{ scale: 1.1, backgroundColor: "#3b82f6" }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link
-                to="Progres"
-                smooth={true}
-                duration={500}
+              <a
+                href="https://reverse-proxy-production-a709.up.railway.app/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="cursor-pointer"
               >
-                My Progres
-              </Link>
+                My Progress
+              </a>
             </motion.button>
           </div>
 
@@ -308,14 +347,14 @@ useEffect(() => {
                 whileHover={{ scale: 1.1, backgroundColor: "#3b82f6" }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Link
-                  to="Progres"
-                  smooth={true}
-                  duration={500}
+                <a
+                  href="https://erza-503.github.io/react-project-1/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="cursor-pointer"
                 >
-                  My Progres
-                </Link>
+                  My Progress
+                </a>
               </motion.button>
             </div>
           </div>
@@ -342,14 +381,14 @@ useEffect(() => {
                 whileHover={{ scale: 1.1, backgroundColor: "#3b82f6" }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Link
-                  to="Progres"
-                  smooth={true}
-                  duration={500}
+                <a
+                  href="https://erza-503.github.io/pkl-project-1/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="cursor-pointer"
                 >
-                  My Progres
-                </Link>
+                  My Progress
+                </a>
               </motion.button>
             </div>
           </div>
@@ -360,38 +399,52 @@ useEffect(() => {
       <section
         id="Contact"
         ref={contactRef}
-        className="h-screen flex justify-center bg-gray-100"
+        className="h-min flex justify-center bg-gray-100"
       >
         <div
-          className={`flex flex-col items-center justify-center ${
+          className={`flex flex-col items-center  ${
             isContactVisible
               ? "opacity-100 translate-x-0 blur-none"
               : "opacity-0 translate-x-24 blur-sm"
           } transition-all duration-1000 ease-in-out`}
         >
           <div className="mb-8">
-            <p className="header-2 text-gray-800 text-2xl pt-20">
-              What I learned?
-            </p>
+            <p className="header-2 text-gray-800 pt-20">What I learned?</p>
           </div>
           <div className="flex gap-6 justify-center items-center flex-wrap">
-            <div className="icon">
-              <SiReact size={80} />
+            <div className="icon text-[20px] sm:text-[40px]">
+              <SiReact />
             </div>
-            <div className="icon">
-              <RiTailwindCssFill size={80} />
+            <div className="icon text-[20px] sm:text-[40px]">
+              <RiTailwindCssFill />
             </div>
-            <div className="icon">
-              <FaHtml5 size={80} />
+            <div className="icon text-[20px] sm:text-[40px]">
+              <FaHtml5 />
             </div>
-            <div className="icon">
-              <FaCss3Alt size={80} />
+            <div className="icon text-[20px] sm:text-[40px]">
+              <FaCss3Alt />
             </div>
-            <div className="icon">
-              <IoLogoJavascript size={80} />
+            <div className="icon text-[20px] sm:text-[40px]">
+              <IoLogoJavascript />
             </div>
-            <div className="icon">
-              <SiTypescript size={80} />
+            <div className="icon text-[20px] sm:text-[40px]">
+              <SiTypescript />
+            </div>
+          </div>
+
+          <div className="max-w-md bg-white shadow-lg rounded-lg p-6 my-10 mx-2">
+            <div className="display flex flex-col items-center text-center">
+              <p className="header-2 text-2xl font-bold mb-4">
+                My Experience at Internship
+              </p>
+              <p className="max-w-md text-gray-600">
+                Selama program internship ini, saya mendapatkan kesempatan luar
+                biasa untuk mendalami dunia frontend development. Dalam periode
+                ini, saya mempelajari berbagai teknologi modern seperti React,
+                TailwindCSS, dan JavaScript, yang memperluas pemahaman saya
+                tentang pengembangan antarmuka pengguna yang responsif dan
+                fungsional.
+              </p>
             </div>
           </div>
         </div>
@@ -430,7 +483,7 @@ useEffect(() => {
             />
           </a>
         </div>
-        <p className="text-white mt-4">© 2024 Your Company</p>
+        <p className="text-white mt-4">Rendy putra</p>
       </footer>
     </div>
   );
