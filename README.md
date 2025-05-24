@@ -1,6 +1,6 @@
 # Porto PKL
 
-Porto PKL adalah proyek portofolio yang dibuat selama masa Praktek Kerja Lapangan (PKL). Proyek ini bertujuan untuk mendokumentasikan dan memamerkan hasil pekerjaan yang telah dilakukan, termasuk keterampilan dalam membangun antarmuka web yang interaktif dan modern menggunakan berbagai teknologi web terbaru.
+Porto PKL adalah proyek portofolio yang dibuat selama masa Praktek Kerja Lapangan (PKL). Proyek ini bertujuan untuk mendokumentasikan dan memamerkan hasil pekerjaan yang telah dilakukan, termasuk keterampilan dalam membangun antarmuka web yang interaktif dan modern .
 
 ## Teknologi yang Digunakan
 
